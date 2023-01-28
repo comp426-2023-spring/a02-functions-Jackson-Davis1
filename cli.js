@@ -27,31 +27,25 @@ if (args.w && args.e) {
     console.log("Cannot input both east and west arguments. Please only input one.");
     process.exit(0);
 }
-if (args.e) {
+else if (args.e) {
     longitude = args.e;
 }
-if (args.w) {
+else if (args.w) {
     longitude = -args.w;
 }
-if (!longitude) {
-    console.log("Please input a longitude argument. Either north west (w) or east (e).");
-    process.exit(0);
-}
+
 
 if (args.n && args.s) {
     console.log("Cannot input both north and south arguments. Please only input one.");
     process.exit(0);
 }
-if (args.n) {
+else if (args.n) {
     latitude = args.n;
 }
-if (args.s) {
+else if (args.s) {
     latitude = -args.s;
 }
-if (!latitude) {
-    console.log("Need to input a latitude argument. north(n) or south(n).");
-    process.exit(0);
-}
+
 
 const url = "https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&timezone=" + timezone + "&daily=precipitation_hours";
 
