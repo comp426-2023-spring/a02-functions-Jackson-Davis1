@@ -33,7 +33,10 @@ else if (args.e) {
 else if (args.w) {
     longitude = -args.w;
 }
-
+else if (!longitude) {
+    console.log("Please input a longitude argument. Either north west (w) or east (e).");
+    process.exit(0);
+}
 
 if (args.n && args.s) {
     console.log("Cannot input both north and south arguments. Please only input one.");
